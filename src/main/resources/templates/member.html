@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medlemslista</title>
+</head>
+<body>
+    <h1>Medlemslista</h1>
+
+    <ul>
+        <li th:each="member : ${test}">
+            <span th:text="${member.name}"></span>
+        </li>
+    
+</body>
+</html>
