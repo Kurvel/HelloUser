@@ -3,6 +3,7 @@ package com.HelloUser.HelloUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MemberController {
@@ -14,4 +15,10 @@ public class MemberController {
         return "member";
     }
     
+    @GetMapping("remove-member/{memberId}")
+    String removeMember(@PathVariable int memberId) {
+        System.out.println("removeMember: " + memberId);
+        HelloUserApplication.form.members.removeIf(member -> member.getId() == memberId);
+        return "redirect:/member";
+    }
 }

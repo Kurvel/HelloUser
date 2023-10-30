@@ -24,7 +24,7 @@ public class FormController {
       String newMember(@RequestParam("name") String name) {
           System.out.println("PostMapping " + name);
          
-          HelloUserApplication.form.members.add(new Member(name, form.members.size() + 1));
+          HelloUserApplication.form.members.add(new Member(name, HelloUserApplication.form.members.size() + 1));
 
           
           return "redirect:/member";
