@@ -9,9 +9,10 @@
     <h1>Medlemslista</h1>
 
     <ul>
-        <li th:each="member : ${test}">
+        <li th:id="${member.id}" th:each="member : ${test}">
             <span th:text="${member.name}"></span>
         </li>
     
+        <div><a href="/">Hem</a></div>
 </body>
 </html>

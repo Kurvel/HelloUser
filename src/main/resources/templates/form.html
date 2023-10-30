@@ -9,8 +9,17 @@
     <h1>Medlemsformulär</h1>
 
     <div>
-        <form method="post" th:action="@{/form}" th:objects=""></form>
+        <form method="post" th:action="@{/new-member}" th:object="${newMember}">
+            <input type="text" th:field="*{name}" >
+        <input type="submit">
+    </form>
     </div>
+
+    <ul>
+        <li th:each="member : ${test}">
+            <span th:text="${member.name}"></span>
+        </li>
     
+        <div><a href="/">Hem</a></div>
 </body>
 </html>
