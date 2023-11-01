@@ -29,6 +29,7 @@ let memberAdmin;
          link.innerText = "Formulär"
          link.href="/form"
          
+         
         let memberAdmin = document.createElement('a');
         memberAdmin.innerText = "Medlemslista för admin"
         memberAdmin.href="/memberAdmin"
@@ -68,6 +69,7 @@ loginBtn.addEventListener("click", () => {
 logoutBtn.addEventListener("click", () => {
     console.log("Klick på logga ut!");
     
+    alert("Du är utloggad");
     localStorage.clear();
     location.replace(location.href);
 

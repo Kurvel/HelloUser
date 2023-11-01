@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Memberform</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
     </div>
 
     <ul>
-        <li th:each="member : ${test}">
+        <li th:each="member : ${memberList}">
             <span th:text="${member.name}"></span>
         </li>
     
