@@ -5,22 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Memberform</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
     <h1>Medlemsformulär</h1>
 
     <div>
         <form method="post" th:action="@{/new-member}" th:object="${newMember}">
-            <input type="text" th:field="*{name}" >
-        <input type="submit" value="spara">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Namn</label>
+            <input type="text" class="form-control" th:field="*{name}" >
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Efternamn</label>
+            <input type="text" class="form-control" th:field="*{lName}" >
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Ålder</label>
+            <input onfocus="this.value=''" type="text" class="form-control" th:field="*{age}" >
+        </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Mailadress</label>
+            <input type="text" class="form-control" th:field="*{mail}" >
+        </div>
+        
+        <div class="col-auto">
+            <button type="submit" value="spara" class="btn btn-primary mb-3">Spara medlem</button>
+          </div>
     </form>
-    </div>
 
-    <ul>
-        <li th:each="member : ${memberList}">
-            <span th:text="${member.name}"></span>
-        </li>
+   
+
+    <table class="table">
     
+        <tr>
+            <th>Namn</th>
+            <th>Efternamn</th>
+            <th>Ålder</th>
+            <th>Mailadress</th>
+          </tr>
+    
+        
+        <tr th:each="member : ${memberList}">
+            <td th:text="${member.name}"></td>
+            <td th:text="${member.lName}"></td>
+            <td th:text="${member.age}"></td>
+            <td th:text="${member.mail}"></td>
+        </tr>
+    
+
+    </table>
+
         <div><a href="/">Hem</a></div>
 </body>
 </html>
