@@ -13,7 +13,7 @@ public class FormController {
 
     @GetMapping("/form")
     String getIndex(Model model) {
-        model.addAttribute("test", HelloUserApplication.form.members);
+        model.addAttribute("memberList", HelloUserApplication.form.members);
         model.addAttribute("newMember", new Member(null, 0));
         return "form";
     }
@@ -27,7 +27,7 @@ public class FormController {
           HelloUserApplication.form.members.add(new Member(name, HelloUserApplication.form.members.size() + 1));
 
           
-          return "redirect:/member";
+          return "redirect:/form";
         
       }
 }
