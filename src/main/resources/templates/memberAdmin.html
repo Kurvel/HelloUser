@@ -12,7 +12,7 @@
     <ul>
         <li th:id="${member.id}" th:each="member : ${test}">
             <span th:text="${member.name}"></span>
-            <a th:href="@{/remove-member/{memberId}(memberId=${member.id})}"></a>
+            <a th:href="@{/remove-member/{memberId}(memberId=${member.id})}">[x]</a>
         </li>
     
         <div><a href="/">Hem</a></div>

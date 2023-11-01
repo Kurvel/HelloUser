@@ -6,19 +6,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-public class MemberController {
-
-     @GetMapping("/member")
+public class MemberAdminController {
+    
+     @GetMapping("/memberAdmin")
     String getIndex(Model model) {
         model.addAttribute("test", HelloUserApplication.form.members);
         model.addAttribute("newMember", new Member(null, 0));
-        return "member";
+        return "memberAdmin";
     }
     
-    // @GetMapping("remove-member/{memberId}")
-    // String removeMember(@PathVariable int memberId) {
-    //     System.out.println("removeMember: " + memberId);
-    //     HelloUserApplication.form.members.removeIf(member -> member.getId() == memberId);
-    //     return "redirect:/member";
-    // }
+    @GetMapping("remove-member/{memberId}")
+    String removeMember(@PathVariable int memberId) {
+        System.out.println("removeMember: " + memberId);
+        HelloUserApplication.form.members.removeIf(member -> member.getId() == memberId);
+        return "redirect:/member";
+    }
 }
