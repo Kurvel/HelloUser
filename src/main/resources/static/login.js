@@ -7,6 +7,7 @@ const loginBtn = document.getElementById("loginBtn");
 let admin;
 const logoutBtn = document.getElementById("logoutBtn");
 let link;
+let memberAdmin;
 
 
 // console.log(localStorage.getItem("userName"));
@@ -23,15 +24,26 @@ let link;
 
  function printLink() {
     if (admin) {
-        console.log("Admin är true");
-        let link = document.createElement("a");
-        link.innerText = "Formulär"
-        link.href="/form"
+         console.log("Admin är true");
+         let link = document.createElement("a");
+         link.innerText = "Formulär"
+         link.href="/form"
          
+        let memberAdmin = document.createElement('a');
+        memberAdmin.innerText = "Medlemslista för admin"
+        memberAdmin.href="/memberAdmin"
         
         // link.id="admin"
+
+        let br =document.createElement("br");
         
+        
+
+
         document.body.appendChild(link)
+        document.body.appendChild(br)
+        document.body.appendChild(memberAdmin)
+        
     }
  }
  printLink();
