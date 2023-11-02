@@ -11,7 +11,7 @@ public class MemberController {
      @GetMapping("/member")
     String getIndex(Model model) {
         model.addAttribute("memberList", HelloUserApplication.form.members);
-        model.addAttribute("newMember", new Member(null, 0));
+        model.addAttribute("newMember", new Member(null, 0, null, 0, null));
         return "member";
     }
     

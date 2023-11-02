@@ -14,17 +14,17 @@ public class FormController {
     @GetMapping("/form")
     String getIndex(Model model) {
         model.addAttribute("memberList", HelloUserApplication.form.members);
-        model.addAttribute("newMember", new Member(null, 0));
+        model.addAttribute("newMember", new Member(null, 0, null, 0, null));
         return "form";
     }
 
     
     
       @PostMapping("/new-member")
-      String newMember(@RequestParam("name") String name) {
+      String newMember(@RequestParam("name") String name, @RequestParam String lName, @RequestParam int age, @RequestParam String mail) {
           System.out.println("PostMapping " + name);
          
-          HelloUserApplication.form.members.add(new Member(name, HelloUserApplication.form.members.size() + 1));
+          HelloUserApplication.form.members.add(new Member(name, HelloUserApplication.form.members.size() + 1, lName, age, mail));
 
           
           return "redirect:/form";

@@ -11,8 +11,8 @@ public class Form {
         this.members = new ArrayList<>();
     }
 
-    public void addMember(String name, int id) {
-        members.add(new Member(name, id));
+    public void addMember(String name, int id, String lName, int age, String mail) {
+        members.add(new Member(name, id, lName, age, mail ));
     }
 
     public String getFormName() {

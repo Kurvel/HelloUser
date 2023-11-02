@@ -9,10 +9,11 @@ public class HelloUserApplication {
 	public static Form form = new Form("MemberForm");
 
 	static {
-		form.addMember("Kalle Karlsson", 1);
-		form.addMember("Anna Andersson", 2);
-		form.addMember("Göran Tallbarr", 3);
-		form.addMember("Ingrid Danielsson", 4);
+		form.addMember("Kalle", 1, "Karlsson", 42, "kalle@gmail.com");
+		form.addMember("Anna", 2, "Andersson", 78, "anna@gmail.com");
+		form.addMember("Göran", 3, "Tallbarr", 24, "goran@gmail.com");
+		form.addMember("Ingrid", 4, "Danielsson", 104, "ingrid@gmail.com");
+		
 	}
 
 	public static void main(String[] args) {
