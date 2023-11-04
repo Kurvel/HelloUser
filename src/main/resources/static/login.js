@@ -9,10 +9,12 @@ const logoutBtn = document.getElementById("logoutBtn");
 let link;
 let memberAdmin;
 
+userName.value = "";
+    password.value = "";
+
+    
 
 
-// console.log(localStorage.getItem("userName"));
-// console.log(localStorage.getItem("password"));
  un = localStorage.getItem("userName");
  pw = localStorage.getItem("password");
  console.log(un + pw);
@@ -22,6 +24,8 @@ let memberAdmin;
  if (un == "admin" && pw == "admin") {
     admin = true;
  }
+
+
 
  function printLink() {
     if (admin) {
@@ -35,12 +39,12 @@ let memberAdmin;
         memberAdmin.innerText = "Medlemslista för admin"
         memberAdmin.href="/memberAdmin"
         
-        // link.id="admin"
+        
 
         let br =document.createElement("br");
         
         
-
+        
 
         document.body.appendChild(link)
         document.body.appendChild(br)
@@ -60,8 +64,7 @@ loginBtn.addEventListener("click", () => {
         localStorage.setItem("userName", userName.value);
         localStorage.setItem("password", password.value);
         alert("Inloggad som admin");
-        userName.value = "";
-        password.value = "";
+        
         
     }
     printLink();
@@ -71,8 +74,11 @@ logoutBtn.addEventListener("click", () => {
     console.log("Klick på logga ut!");
     
     alert("Du är utloggad");
+    
+    
     localStorage.clear();
     location.replace(location.href);
 
     
 });
+
